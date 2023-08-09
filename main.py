@@ -5,3 +5,22 @@ the_question_label = lv.label(the_question_btn)
 the_question_label.set_text("click me!")
 the_question_label.center()
 
+
+chart = lv.chart(lv.scr_act())
+chart.set_size(220,150)
+chart.set_style_bg_color(lv.color_hex(0x000000),0)
+chart.set_style_line_color(lv.color_hex(0x1aec1a),0)
+chart.set_style_border_color(lv.color_hex(0x1aec1a),0)
+
+chart.align_to(the_question_btn, lv.ALIGN.OUT_BOTTOM_MID,20,10)
+chart.set_type(lv.chart.TYPE.LINE)
+chart.set_update_mode(lv.chart.UPDATE_MODE.SHIFT)
+chart.set_point_count(20)
+chart.set_div_line_count(0,0)
+
+ser1 = chart.add_series(lv.color_hex(0x00eeff), lv.chart.AXIS.PRIMARY_Y)
+chart.set_next_value(ser1, 100)
+chart.set_next_value(ser1, 80)
+chart.set_next_value(ser1, 40)
+chart.set_next_value(ser1, 140)
+chart.set_range(lv.chart.AXIS.PRIMARY_Y, 0, 160)
